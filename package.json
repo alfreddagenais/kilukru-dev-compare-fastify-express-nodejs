@@ -1,0 +1,29 @@
+{
+  "name": "kilukru-dev-eslint-prettier-node-app",
+  "version": "1.0.0",
+  "description": "Ce dépôt est le résultat de l'article : \"Configurer une application Node.js avec ESLint et Prettier\". Vous pouvez le consulter sur [kilukru.dev](https://www.kilukru.dev/?p=375&preview=true)",
+  "main": "index.js",
+  "scripts": {
+    "format:check": "prettier --check .",
+    "format:write": "prettier --write .",
+    "lint:check": "eslint",
+    "lint:fix": "eslint --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alfreddagenais/kilukru-dev-eslint-prettier-node-app.git"
+  },
+  "keywords": [],
+  "author": "Alfred Dagenais <jesuis@alfreddagenais.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alfreddagenais/kilukru-dev-eslint-prettier-node-app/issues"
+  },
+  "homepage": "https://github.com/alfreddagenais/kilukru-dev-eslint-prettier-node-app#readme",
+  "devDependencies": {
+    "eslint": "^8.6.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-react": "^7.28.0",
+    "prettier": "^2.5.1"
+  }
+}
