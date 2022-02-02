@@ -1,31 +1,37 @@
 # Configurer une application Node.js avec ESLint et Prettier
 
-Ce dépôt est le résultat de l'article : "Configurer une application Node.js avec ESLint et Prettier". Vous pouvez le consulter sur [kilukru.dev](https://www.kilukru.dev/configurer-une-application-node-js-avec-eslint-et-prettier/)
+Ce dépôt est le résultat de l'article : "Test de performance entre Fastify.js, Express.js et Node.js". Vous pouvez le consulter sur [kilukru.dev](https://www.kilukru.dev/test-de-performance-entre-fastify-js-express-js-et-node-js/)
 
-## Commandes pour ESLint et Prettier
+## Installation de `wrk`
 
-### Vérifiez si le formatage correspond aux règles de ce Prettier en utilisant cette commande
+[wrk](https://github.com/wg/wrk) est un outil moderne de benchmarking HTTP capable de générer une charge significative lorsqu'il est exécuté sur un seul CPU multi-core. Il combine une conception multithread avec des systèmes de notification d'événements évolutifs tels que epoll et kqueue.
+
+Sous macOS, il peut être installé avec `brew install wrk`. Sous Linux, il peut être installé avec `sudo apt-get install wrk`.
+
+## Benchmarking avec `wrk`
+
+### Test avec express
 
 ```bash
-npm run format:check
+node express.js
 ```
 
-### Force the formatting by using this command
+### Test avec pur nodejs
 
 ```bash
-npm run format:write
+node bare-node.js
 ```
 
-### lint your code using this command
+### Test avec fastify
 
 ```bash
-npm run lint:check
+node fastify.js
 ```
 
-### auto-fixing errors using this command
+### Dans un autre terminal on roule `wrk`
 
 ```bash
-npm run lint:fix
+wrk -t12 -c400 -d10s "http://localhost:4000/api?name=Jean&lastname=Tremblay"
 ```
 
 ## Contact
